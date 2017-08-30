@@ -38,6 +38,7 @@ class DI
         return $this->container['$key'] ? isset($this->container['$key']) : false;
     }
 
+    public function go(){}
 
 
 
