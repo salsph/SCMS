@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2d121e9-dec6-44c9-83b1-21eb14c341f6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCMS/engine/DI/DI.php" afterPath="$PROJECT_DIR$/SCMS/engine/DI/DI.php" />
-    </list>
+    <list default="true" id="d2d121e9-dec6-44c9-83b1-21eb14c341f6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,15 +206,15 @@
       <option name="presentableId" value="Default" />
       <updated>1504121189446</updated>
       <workItem from="1504121193685" duration="31000" />
-      <workItem from="1504121376923" duration="725000" />
+      <workItem from="1504121376923" duration="808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="756000" />
+    <option name="totallyTimeSpent" value="839000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
