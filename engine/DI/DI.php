@@ -7,7 +7,7 @@
  * Time: 19:51
  */
 
-namespace Engine\Di;
+namespace Engine\DI;
 
 /**
  * Class DI
@@ -26,7 +26,7 @@ class DI
      * @return $this
      */
     public function __set($key, $value){
-        $this->container['$key'] = $value;
+        $this->container[$key] = $value;
         return $this;
     }
 
@@ -35,10 +35,8 @@ class DI
      * @return bool
      */
     public function __get($key){
-        return $this->container['$key'] ? isset($this->container['$key']) : false;
+        return isset($this->container[$key]) ? $this->container[$key] : null;
     }
-
-    public function go(){}
 
 
 

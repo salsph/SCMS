@@ -1,0 +1,17 @@
+{
+    "name": "mikita/scms",
+    "authors": [
+        {
+            "name": "salsph",
+            "email": "sal.sp.h17@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Engine\\DI\\": "engine/DI"
+        }
+    }
+
+}
