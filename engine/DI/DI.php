@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Никитка
- * Date: 30.08.2017
- * Time: 19:51
- */
-
 namespace Engine\DI;
 
 /**
@@ -25,7 +18,7 @@ class DI
      * @param $value
      * @return $this
      */
-    public function __set($key, $value){
+    public function set($key, $value){
         $this->container[$key] = $value;
         return $this;
     }
@@ -34,7 +27,7 @@ class DI
      * @param $key
      * @return bool
      */
-    public function __get($key){
+    public function get($key){
         return isset($this->container[$key]) ? $this->container[$key] : null;
     }
 
