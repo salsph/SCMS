@@ -14,7 +14,7 @@ try{
         $provider = new $service($di);
         $provider->init();
     }
- 
+
     $cms = new Cms($di);
     $cms->run();
 

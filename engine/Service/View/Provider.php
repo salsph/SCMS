@@ -1,0 +1,24 @@
+<?php
+
+namespace Engine\Service\View;
+
+use Engine\Service\AbstractProvider;
+use Engine\Core\Template\View;
+
+class Provider extends AbstractProvider
+{
+    /**
+     * @var string
+     */
+    private $service_name = 'view';
+
+    /**
+     * @param $host
+     */
+    public function init(){
+        $view = new View();
+        $this->di->set($this->service_name, $view);
+    }
+
+
+}
