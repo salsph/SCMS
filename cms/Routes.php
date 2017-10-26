@@ -4,7 +4,7 @@
  */
 
 return [
-    ['home', '/', 'HomeController:index'],
-    ['news_single', '/news/(id:num)', 'HomeController:news'],
+    ['home',        '/',              'HomeController:index', 'GET'],
+    ['news_single', '/news/(id:num)', 'HomeController:news',  'GET'],
 
 ];

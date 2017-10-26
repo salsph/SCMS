@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Museo_500;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_500.otf);
+}
+@font-face {
+    font-family: Museo_100;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_100.otf);
+}
+@font-face {
+    font-family: Museo_700;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_700.otf);
+}
+@font-face {
+    font-family: Museo_500i;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_500_Italic.otf);
+}
+@font-face {
+    font-family: Museo_100i;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_100_Italic.otf);
+}
+@font-face {
+    font-family: Museo_700i;
+    src: url(/admin/Assets/fonts/Museo_Cyrl_700_Italic.otf);
+}
+@font-face {
+    font-family: Franklin_Gothic;
+    src: url(/admin/Assets/fonts/Franklin_Gothic.otf);
+}
+

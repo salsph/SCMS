@@ -6,7 +6,8 @@
             "email": "sal.sp.h17@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+    },
     "autoload": {
         "psr-4": {
             "Engine\\": "engine",

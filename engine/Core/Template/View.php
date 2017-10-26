@@ -17,7 +17,7 @@ class View
      * @throws \Exception
      */
     public function render($template, $vars = []){
-        $template_path = ROOT_DIR . '/content/themes/default/' . $template . '.php';
+        $template_path = $this->getTamplatePath($template, ENV);
 
         if (!is_file($template_path)){
             throw new \InvalidArgumentException(sprintf("template '%s' not found in '%s'", $template, $template_path));
@@ -38,6 +38,18 @@ class View
 
         echo ob_get_clean();
 
+    }
+
+    /**
+     * @param $template
+     * @param null $env
+     * @return string
+     */
+    private function getTamplatePath($template, $env = null){
+        if ($env == 'Cms')
+            return ROOT_DIR . '/content/themes/default/' . $template . '.php';
+
+        return ROOT_DIR . '/View/' . $template . '.php';
     }
 
 }

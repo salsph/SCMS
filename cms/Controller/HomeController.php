@@ -10,6 +10,6 @@ class HomeController extends  CmsController
     }
 
     public function news($id){
-        echo "News page, news number " . $id;
+        echo "News Page, news number " . $id;
     }
 }

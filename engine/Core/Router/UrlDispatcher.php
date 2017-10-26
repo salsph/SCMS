@@ -43,7 +43,6 @@ class UrlDispatcher
      */
     public function dispatch($method, $uri){
         $routes = $this->routes(strtoupper($method));
-
         if (array_key_exists($uri,$routes)){
             return new DispatchedRoute($routes[$uri]);
         }

@@ -40,8 +40,8 @@ class Cms
              */
             $routes = require_once __DIR__ . '/../'. strtolower(ENV) .'/' . 'Routes.php';
             foreach ($routes as $route){
-                list($name, $pattern, $controller_name) = $route;
-                $this->router->add($name, $pattern, $controller_name);
+                    list($name, $pattern, $controller_name, $method) = $route;
+                    $this->router->add($name, $pattern, $controller_name, $method);
             }
 
 
