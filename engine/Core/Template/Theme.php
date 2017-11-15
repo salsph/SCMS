@@ -90,6 +90,7 @@ class Theme
      * @throws \Exception
      */
     private function LoadTemplateFile($file_name, $data = []){
+        $data+= $this->data;
         $file = ROOT_DIR . '/content/themes/default/' . $file_name . '.php';
 
         if (ENV == 'Admin'){

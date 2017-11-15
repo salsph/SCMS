@@ -49,10 +49,12 @@ trait ActiveRecord
 
         try {
             if (isset($this->id)) {
-                $this->db->execute($this->queryBuilder->update($this->getTable())->set($properties)->where('id', $this->id)->sql(), $this->queryBuilder->getValues());
+                //$this->db->execute($this->queryBuilder->update($this->getTable())->set($properties)->where('id', $this->id)->sql(), $this->queryBuilder->getValues());
+                $this->db->execute($this->queryBuilder->update($this->getTable())->set($properties)->where('id', $this->getId())->sql(), $this->queryBuilder->getValues());
             } else {
                 $this->db->execute($this->queryBuilder->insert($this->getTable())->set($properties)->sql(), $this->queryBuilder->getValues());
             }
+            return $this->db->lastInsertId();
         } catch (\Exception $e) {
             echo $e->getMessage();
         }
@@ -83,5 +85,10 @@ trait ActiveRecord
         $properties = $reflection->getProperties(ReflectionProperty::IS_PRIVATE);
 
         return $properties;
+    }
+
+    public function findOne(){
+        $resault = $this->db->query($this->queryBuilder->select()->from($this->getTable())->where('id', $this->getId())->sql(), $this->queryBuilder->getValues()) ;
+        return isset($resault[0]) ? $resault[0] : null;
     }
 }

@@ -10,6 +10,11 @@ class AdminController extends  Controller
     protected $auth;
 
     /**
+     * @var array
+     */
+    protected $data = [];
+
+    /**
      * AdminController constructor.
      * @param \Engine\DI\DI $di
      */
@@ -22,6 +27,9 @@ class AdminController extends  Controller
             header('Location: /admin/login');
             exit;
         }
+
+        //load language
+        $this->load->language('dashboard/menu');
     }
 
     /**

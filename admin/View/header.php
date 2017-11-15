@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/admin/Assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/admin/Assets/css/login.css">
     <link rel="stylesheet" href="/admin/Assets/css/animate.css">
+    <link rel="stylesheet" href="/admin/Assets/js/plugins/trumbowyg/ui/trumbowyg.min.css">
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
     <title>Login</title>
 </head>
@@ -22,10 +23,10 @@
             <div class="col-md-9 header_right">
                 <nav>
                     <ul class="main_menu">
-                        <a href="/admin"><li><i class="fa fa-home" aria-hidden="true"></i>Home</li></a>
-                        <a href="/admin/page"><li><i class="fa fa-file-text" aria-hidden="true"></i>Pages</li></a>
-                        <a href="#"><li><i class="fa fa-pencil" aria-hidden="true"></i>Posts</li></a>
-                        <a href="#"><li><i class="fa fa-cog" aria-hidden="true"></i>Settings</li></a>
+                        <a href="/admin"><li><i class="fa fa-home" aria-hidden="true"></i><?= $lang->dashboardMenu['home'] ?></li></a>
+                        <a href="/admin/pages"><li><i class="fa fa-file-text" aria-hidden="true"></i><?= $lang->dashboardMenu['pages'] ?></li></a>
+                        <a href="/admin/posts"><li><i class="fa fa-pencil" aria-hidden="true"></i><?= $lang->dashboardMenu['posts'] ?></li></a>
+                        <a href="/admin/settings"><li><i class="fa fa-cog" aria-hidden="true"></i><?= $lang->dashboardMenu['settings'] ?></li></a>
                     </ul>
                     <div class="admin_logout">
                         <a href="/admin/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>

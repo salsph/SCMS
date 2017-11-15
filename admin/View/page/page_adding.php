@@ -4,11 +4,11 @@
         <div class="col-md-12">
             <h3>Add new page</h3>
             
-            <form action="">
-                <input type="text" placeholder="Title">
-                <textarea name="" id="" cols="30" rows="2" placeholder="Content"></textarea>
-                <input type="submit" value="Add">
+            <form>
+                <input type="text" placeholder="Title" name="title" id="form_title">
+                <textarea name="content" class="form_content" id="redactor" ></textarea>
             </form>
+            <button class="add_click" onclick="page.add();">Add</button>
 
         </div>
     </div>

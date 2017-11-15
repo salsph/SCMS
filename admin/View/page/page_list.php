@@ -4,7 +4,6 @@
         <div class="col-md-12">
             <h3>Pages</h3>
 
-            <?php print_r($pages); ?>
             <table>
                 <tr>
                     <td>
@@ -16,32 +15,38 @@
                     </td>
 
                     <td>
-                        content
-                    </td>
-                    <td>
                         date
                     </td>
-                </tr>
-                <tr>
-                    <td>
-                        valera
-                    </td>
 
                     <td>
-                        geka
-                    </td>
 
-                    <td>
-                        gus
-                    </td>
-
-                    <td>
-                        gus
                     </td>
                 </tr>
+                <?php foreach ($pages as $page) : ?>
+                    <tr>
+                        <td>
+                            <?= $page['id'] ?>
+                        </td>
+
+                        <td>
+                            <?= $page['title']?>
+                        </td>
+
+
+                        <td>
+                            <?= $page['reg_date']?>
+                        </td>
+
+                        <td>
+                            <a href="/admin/page/edit/<?= $page['id'] ?>">Edit</a>
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
             </table>
 
-            <a href="/admin/page/add">New Page</a>
+
+            <a href="/admin/page/create">New Page</a>
 
         </div>
     </div>

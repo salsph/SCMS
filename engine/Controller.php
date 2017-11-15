@@ -40,6 +40,7 @@ abstract class Controller
      */
     protected $load;
 
+
     /**
      * Controller constructor.
      * @param DI $di

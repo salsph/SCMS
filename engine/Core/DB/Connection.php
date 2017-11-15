@@ -54,4 +54,8 @@ class Connection
         return $sth->execute($params);
     }
 
+    public function lastInsertId(){
+        return $this->link->lastInsertId();
+    }
+
 }
