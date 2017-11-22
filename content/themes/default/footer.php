@@ -1,7 +1,4 @@
-<?php
-echo 'Footer ' . $this->data['boy'] . ' </br>';
-
-?>
+<?php Assets::render('js');?>
 
 </body>
 </html>

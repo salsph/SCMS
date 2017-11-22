@@ -2,6 +2,8 @@
 
 namespace Engine\Core\Template;
 
+use Engine\Core\Config\Config;
+
 class Theme
 {
     /**
@@ -16,12 +18,17 @@ class Theme
     /**
      * @var string
      */
-    public $url;
+    protected static $url = '';
+
+    /**
+     * const for current theme url
+     */
+    const URL_THEME_MASK = 'content/themes/%s';
 
     /**
      * @var array
      */
-    protected $data = [];
+    protected static $data = [];
 
     /**
      * Theme constructor.
@@ -30,18 +37,20 @@ class Theme
     {
     }
 
+    public static function getUrl(){
+        $curr_theme = Config::item('default_theme', 'main');
+
+        return sprintf(self::URL_THEME_MASK, $curr_theme);
+    }
+
     /**
      * @param null $name
      */
     public function header($name = null){
         $name = (string)$name;
-        $file = 'header';
+        $file = self::DetectFileName($name, __FUNCTION__);
 
-        if($name !== ''){
-            $file = sprintf(self::RULES_NAME_FILE['header'], $name);
-        }
-
-        $this->LoadTemplateFile($file);
+        Component::load($file);
     }
 
     /**
@@ -49,13 +58,9 @@ class Theme
      */
     public function footer($name = null){
         $name = (string)$name;
-        $file = 'footer';
+        $file = self::DetectFileName($name, __FUNCTION__);
 
-        if($name !== ''){
-            $file = sprintf(self::RULES_NAME_FILE['footer'], $name);
-        }
-
-        $this->LoadTemplateFile($file);
+        Component::load($file);
     }
 
     /**
@@ -63,13 +68,9 @@ class Theme
      */
     public function sidebar($name = null){
         $name = (string)$name;
-        $file = 'sidebar';
+        $file = self::DetectFileName($name, __FUNCTION__);
 
-        if($name !== ''){
-            $file = sprintf(self::RULES_NAME_FILE['sidebar'], $name);
-        }
-
-        $this->LoadTemplateFile($file);
+        Component::load($file);
     }
 
     /**
@@ -80,46 +81,36 @@ class Theme
         $name = (string)$name;
 
         if($name !== ''){
-            $this->LoadTemplateFile($name, $data);
+            Component::load($name, $data);
         }
     }
+
 
     /**
-     * @param $file_name
-     * @param array $data
-     * @throws \Exception
+     * @param $file
+     * @param $function
+     * @return string
      */
-    private function LoadTemplateFile($file_name, $data = []){
-        $data+= $this->data;
-        $file = ROOT_DIR . '/content/themes/default/' . $file_name . '.php';
-
-        if (ENV == 'Admin'){
-            $file = ROOT_DIR . '/View/' . $file_name . '.php';
-        }
-
-        if(is_file($file)){
-            extract($data);
-            require_once $file;
-        }
-        else{
-            throw new \Exception(sprintf('Can\'t load template file "%s" in "%s" . Doesn\'t exist !', $file_name, $file));
-        }
+    public static function DetectFileName($file, $function){
+        return empty($file) ? $function : sprintf(self::RULES_NAME_FILE, $file);
     }
+
+
 
     /**
      * @return array
      */
-    public function getData()
+    public static function getData()
     {
-        return $this->data;
+        return self::$data;
     }
 
     /**
      * @param array $data
      */
-    public function setData($data)
+    public static function setData($data)
     {
-        $this->data = $data;
+        self::$data = $data;
     }
 
 

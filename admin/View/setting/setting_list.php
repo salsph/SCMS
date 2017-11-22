@@ -1,20 +1,41 @@
 <?php $this->theme->header(); ?>
 
 <div class="container">
-    <row>
+    <div class="row">
+        <div class="col-md-12">
+        <form id="setting_update">
 
-        <form action="#">
+            <?php foreach ($settings as $setting) :?>
+                <?php if ($setting['field_key'] == 'language') : ?>
 
-            <?php foreach ($settings as $setting) ?>
-            <p>
-                <?= $setting['name'] ?>
-                <input type="text" name="<?= $setting['field_key'] ?>" value="<?= $setting['value'] ?>">
-            </p>
+                    <p>
+                        <?= $setting['name'] ?>
+                        <select name="<?= $setting['field_key'] ?>" >
+                            <?php foreach ($languages as $lang) : ?>
+                                <option value="<?=$lang['key']?>">
+                                    <?=$lang['title']?>
+                                </option>
+                            <?php endforeach;?>
+                        </select>
 
+                    </p>
+
+                    <?php else : ?>
+
+                    <p>
+                        <?= $setting['name'] ?>
+                        <input type="text" name="<?= $setting['field_key'] ?>" value="<?= $setting['value'] ?>">
+                    </p>
+
+                    <?php endif; ?>
+
+            <?php endforeach; ?>
 
         </form>
+            <button onclick="setting.update()">Update</button>
+        </div>
 
-    </row>
+    </div>
 </div>
 
 

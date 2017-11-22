@@ -25,7 +25,7 @@ class Connection
      * @return $this
      */
     private function connect(){
-        $config = Config::file('db');
+        $config = Config::group('db');
         $dsn = "mysql:host=".$config['db_host'].";dbname=".$config['db_name'].";charset=".$config['db_charset'];
         $this->link = new PDO($dsn, $config['db_user'], $config['db_password']);
         return $this;

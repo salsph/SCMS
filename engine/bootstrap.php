@@ -1,9 +1,13 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/Functions.php';
+
 use Engine\Cms;
 use Engine\DI\DI;
 
+class_alias('Engine\\Core\\Template\\Assets', 'Assets');
+class_alias('Engine\\Core\\Template\\Theme', 'Theme');
 
 try{
     $di = new DI();

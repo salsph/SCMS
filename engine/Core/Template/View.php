@@ -2,6 +2,8 @@
 
 namespace Engine\Core\Template;
 
+use \Engine\Core\Config\Config;
+
 class View
 {
     protected $theme;
@@ -20,7 +22,8 @@ class View
      * @throws \Exception
      */
     public function render($template, $vars = []){
-        $template_path = $this->getTamplatePath($template, ENV);
+        require_once $this->getThemePath() . '/functions.php';
+        $template_path = $this->getTemplatePath($template, ENV);
 
         if (!is_file($template_path)){
             throw new \InvalidArgumentException(sprintf("template '%s' not found in '%s'", $template, $template_path));
@@ -51,11 +54,19 @@ class View
      * @param null $env
      * @return string
      */
-    private function getTamplatePath($template, $env = null){
-        if ($env == 'Cms')
-            return ROOT_DIR . '/content/themes/default/' . $template . '.php';
+    private function getTemplatePath($template, $env = null){
+        if ($env == 'Cms'){
+            $curr_theme = Config::item('default_theme', 'main');
+            return ROOT_DIR . '/content/themes/'. $curr_theme .'/' . $template . '.php';
+        }
 
-        return ROOT_DIR . '/View/' . $template . '.php';
+
+        return path('view') . '/' . $template . '.php';
+    }
+
+    private function getThemePath(){
+        $curr_theme = Config::item('default_theme', 'main');
+        return ROOT_DIR . '/content/themes/' . $curr_theme;
     }
 
 }

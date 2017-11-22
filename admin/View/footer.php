@@ -7,6 +7,9 @@
 <!-- js for ajax request of  posts -->
 <script type="text/javascript" src="/admin/Assets/js/post.js" crossorigin="anonymous"></script>
 
+<!-- js for ajax request of  settings -->
+<script type="text/javascript" src="/admin/Assets/js/setting.js" crossorigin="anonymous"></script>
+
 <!-- plugin Tinymce -->
 <!--<script type="text/javascript" src="/admin/Assets/js/plugins/tinymce/tinymce.min.js"></script>-->
 <script type="text/javascript" src="/admin/Assets/js/plugins/trumbowyg/trumbowyg.min.js"></script>
