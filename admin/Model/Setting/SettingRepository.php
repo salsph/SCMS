@@ -22,4 +22,12 @@ class SettingRepository extends Model
 
     }
 
+    public function getSetting($key){
+        $sql = $this->query_builder->select('value')->from('setting')->where('field_key', $key)->sql();
+        $data = $this->query_builder->getValues();
+        $res = $this->db->query($sql, $data);
+
+        return isset($res[0]) ? $res[0]['value'] : null;
+    }
+
 }

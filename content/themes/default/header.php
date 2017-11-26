@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-    <title>Sprint Bootstrap Website Design</title>
+    <title><?= Setting::get('site_name') . ' | ' . Setting::get('site_description')?></title>
     <meta name="description" content="">
 
     <meta name="viewport" content="width=device-width">

@@ -10,10 +10,13 @@ class View
 
     private $di;
 
+    protected $setting;
+
     public function __construct(\Engine\DI\DI $di)
     {
         $this->theme = new Theme();
         $this->di = $di;
+        $this->setting = new Setting($di);
     }
 
     /**
@@ -22,7 +25,10 @@ class View
      * @throws \Exception
      */
     public function render($template, $vars = []){
-        require_once $this->getThemePath() . '/functions.php';
+        if(file_exists($this->getThemePath() . '/functions.php')){
+            require_once $this->getThemePath() . '/functions.php';
+        }
+
         $template_path = $this->getTemplatePath($template, ENV);
 
         if (!is_file($template_path)){

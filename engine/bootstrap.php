@@ -8,6 +8,7 @@ use Engine\DI\DI;
 
 class_alias('Engine\\Core\\Template\\Assets', 'Assets');
 class_alias('Engine\\Core\\Template\\Theme', 'Theme');
+class_alias('Engine\\Core\\Template\\Setting', 'Setting');
 
 try{
     $di = new DI();
