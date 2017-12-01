@@ -6,17 +6,32 @@ use \Engine\Core\Config\Config;
 
 class View
 {
+    /**
+     * @var Theme
+     */
     protected $theme;
 
+    /**
+     * @var \Engine\DI\DI
+     */
     private $di;
 
-    protected $setting;
+    /**
+     * @var Setting
+     */
+    private $setting;
+
+    /**
+     * @var Menu
+     */
+    private $menu;
 
     public function __construct(\Engine\DI\DI $di)
     {
         $this->theme = new Theme();
         $this->di = $di;
         $this->setting = new Setting($di);
+        $this->menu = new Menu($di);
     }
 
     /**

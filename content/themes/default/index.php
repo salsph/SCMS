@@ -19,10 +19,9 @@ $this->theme->header();
                         <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
                         <div class="main-menu">
                             <ul>
-                                <li><a href="#front">Home</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#products">Products</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <?php foreach(Menu::mainMenu() as $menu) :?>
+                                <li><a href="<?=$menu['href']?>"><?=$menu['name']?></a></li>
+                                <?php endforeach;?>
                             </ul>
                         </div> <!-- /.main-menu -->
                     </div> <!-- /.col-md-8 -->
@@ -32,10 +31,12 @@ $this->theme->header();
                         <div class="responsive">
                             <div class="main-menu">
                                 <ul>
+
                                     <li><a href="#front">Home</a></li>
                                     <li><a href="#services">Services</a></li>
                                     <li><a href="#products">Products</a></li>
                                     <li><a href="#contact">Contact</a></li>
+
                                 </ul>
                             </div>
                         </div>
