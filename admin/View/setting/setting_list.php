@@ -2,6 +2,16 @@
 
 <div class="container">
     <div class="row">
+        <div class="col page-title">
+            <h3>General</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <?php $this->theme->block('setting/tabs'); ?>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
         <form id="setting_update">
 
@@ -35,7 +45,10 @@
             <button onclick="setting.update()">Update</button>
         </div>
 
+
     </div>
+
+
 </div>
 
 

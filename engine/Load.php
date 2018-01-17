@@ -35,18 +35,21 @@ class Load
      * @param bool $model_dir
      * @return \stdClass
      */
-    public function model($model_name, $model_dir = false){
+    public function model($model_name, $model_dir = false, $env = false){
 
         global $di;
+        $env = $env ? ucfirst($env) : ENV;
 
         $model_name = ucfirst($model_name);
         $model = new \stdClass();
         $model_dir = $model_dir ? ucfirst($model_dir) : $model_name;
 
-        $entity = sprintf(self::MASK_MODEL_ENTITY, ENV, $model_dir, $model_name);
-        $repository = sprintf(self::MASK_MODEL_REPOSITORY, ENV, $model_dir, $model_name);
+        $entity = sprintf(self::MASK_MODEL_ENTITY, $env, $model_dir, $model_name);
+        $repository = sprintf(self::MASK_MODEL_REPOSITORY, $env, $model_dir, $model_name);
 
         $model->entity = $entity;
+
+
         $model->repository = new $repository($di);
 
         return $model;

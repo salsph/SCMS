@@ -33,6 +33,13 @@ class QueryBuilder
         return $this;
     }
 
+    public function delete(){
+        $this->reset();
+        $this->sql['delete'] = 'DELETE ';
+
+        return $this;
+    }
+
     /**
      * @param $table
      * @return $this
@@ -104,7 +111,7 @@ class QueryBuilder
         if(!empty($data)) {
             foreach ($data as $key => $value) {
                 $this->sql['set'] .= "{$key} = ?";
-                if (next($data)){
+                if (next($data) !== false){
                     $this->sql['set'] .= ', ';
                 }
                 $this->values[]    = $value;

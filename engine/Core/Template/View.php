@@ -90,4 +90,8 @@ class View
         return ROOT_DIR . '/content/themes/' . $curr_theme;
     }
 
+    public function getTheme(){
+        return $this->theme;
+    }
+
 }

@@ -20,7 +20,7 @@ class Component
         if(is_file($file)){
 
             extract(array_merge($data, Theme::getData()));
-            require_once $file;
+            require $file;
         }
         else{
             throw new \Exception(sprintf('Can\'t load template file "%s" in "%s" . Doesn\'t exist !', $file_name, $file));

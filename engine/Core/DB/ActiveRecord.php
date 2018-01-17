@@ -49,7 +49,6 @@ trait ActiveRecord
 
         try {
             if (isset($this->id)) {
-                //$this->db->execute($this->queryBuilder->update($this->getTable())->set($properties)->where('id', $this->id)->sql(), $this->queryBuilder->getValues());
                 $this->db->execute($this->queryBuilder->update($this->getTable())->set($properties)->where('id', $this->getId())->sql(), $this->queryBuilder->getValues());
             } else {
                 $this->db->execute($this->queryBuilder->insert($this->getTable())->set($properties)->sql(), $this->queryBuilder->getValues());

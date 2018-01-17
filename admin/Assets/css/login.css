@@ -245,3 +245,9 @@ input[type="password"] {
 header .admin_logout .fa {
   margin-right: 7px;
 }
+.active {
+  background-color: #CACACA;
+}
+.menu-item-event {
+  display: inline-block;
+}

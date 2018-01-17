@@ -5,12 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/admin/Assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/admin/Assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/admin/Assets/css/login.css">
     <link rel="stylesheet" href="/admin/Assets/css/animate.css">
     <link rel="stylesheet" href="/admin/Assets/js/plugins/trumbowyg/ui/trumbowyg.min.css">
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/admin/Assets/css/login.css">
     <title>Login</title>
 </head>
 <body>
