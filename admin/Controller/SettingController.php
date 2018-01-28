@@ -66,4 +66,12 @@ class SettingController extends AdminController
         }
     }
 
+    public function menuItemUpdate(){
+        $params = $this->request->post;
+        if ($params['id'] != '' && $params['value'] != ''){
+            $menu_item_model = $this->load->model('menuItem', false, 'Cms');
+            echo $menu_item_model->repository->updateItem($params);
+        }
+    }
+
 }

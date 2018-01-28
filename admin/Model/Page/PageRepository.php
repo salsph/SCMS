@@ -36,4 +36,9 @@ class PageRepository extends Model
         }
     }
 
+    public function deletePage($params){
+        $sql = $this->query_builder->delete()->from('page')->where('id', $params['id'])->sql();
+        return $this->db->execute($sql, $this->query_builder->getValues());
+    }
+
 }

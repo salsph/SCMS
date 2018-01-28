@@ -26,7 +26,8 @@ class Menu
     }
 
     public static function mainMenu(){
-        return self::$repository->getAll();
+        //return self::$repository->getAll();
+        return self::$repository->get('lalalaland');
     }
 
 }

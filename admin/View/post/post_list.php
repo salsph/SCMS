@@ -23,7 +23,7 @@
                     </td>
                 </tr>
                 <?php foreach ($posts as $post) : ?>
-                    <tr>
+                    <tr id="post-<?=$post['id'];?>">
                         <td>
                             <?= $post['id'] ?>
                         </td>
@@ -39,6 +39,10 @@
 
                         <td>
                             <a href="/admin/post/edit/<?= $post['id'] ?>">Edit</a>
+                        </td>
+
+                        <td>
+                            <button onclick="post.delete(<?=$post['id'];?>);">Delete</button>
                         </td>
 
                     </tr>

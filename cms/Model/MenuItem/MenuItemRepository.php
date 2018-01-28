@@ -7,6 +7,8 @@ use Engine\Model;
 class MenuItemRepository extends Model
 {
     const NEW_MENU_ITEM_NAME = 'New item';
+    const FIELD_NAME = 'name';
+    const FIELD_LINK = 'link';
 
     /**
      * @param $menu_id
@@ -40,5 +42,15 @@ class MenuItemRepository extends Model
             $item->setPosition($position);
             $item->save();
         }
+    }
+
+    public function updateItem($params){
+        $item = new MenuItem($params['id']);
+        if ($params['name'] == self::FIELD_LINK){
+            $item->setHref($params['value']);
+        } elseif($params['name'] == self::FIELD_NAME){
+            $item->setName($params['value']);
+        }
+        return $item->save();
     }
 }

@@ -70,5 +70,23 @@ var menu = {
                 }
             }
         });
+    },
+
+    updateItem: function(item_id, item_name, item) {
+        var form_data = new FormData();
+
+        form_data.append('id', item_id);
+        form_data.append('name', item_name);
+        form_data.append('value', $(item).val());
+
+        $.ajax({
+            type: this.ajax_method,
+            url: '/admin/settings/aj_menu_item_update',
+            data: form_data,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(){}
+        });
     }
 };

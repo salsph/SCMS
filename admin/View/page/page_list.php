@@ -23,7 +23,7 @@
                     </td>
                 </tr>
                 <?php foreach ($pages as $page) : ?>
-                    <tr>
+                    <tr id="page-<?=$page['id']?>">
                         <td>
                             <?= $page['id'] ?>
                         </td>
@@ -39,6 +39,10 @@
 
                         <td>
                             <a href="/admin/page/edit/<?= $page['id'] ?>">Edit</a>
+                        </td>
+
+                        <td>
+                            <button onclick="page.delete(<?= $page['id'] ?>);">Delete</button>
                         </td>
 
                     </tr>

@@ -33,7 +33,7 @@ var page = {
         $.ajax({
 
             url: '/admin/page/update',
-            method: this.ajax_method,
+            type: this.ajax_method,
             data: form_data,
             cache: false,
             contentType: false,
@@ -45,6 +45,25 @@ var page = {
 
             }
 
+        });
+    },
+
+    delete: function(id){
+        var form_data = new FormData();
+        form_data.append('id', id);
+
+        $.ajax({
+            url: '/admin/page/delete',
+            data: form_data,
+            cache: false,
+            type: this.ajax_method,
+            contentType: false,
+            processData: false,
+            success: function(data){
+                if(data){
+                    $('#page-' + id).remove();
+                }
+            }
         });
     }
 

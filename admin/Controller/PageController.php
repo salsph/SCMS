@@ -22,7 +22,6 @@ class PageController extends  AdminController
 
         if ($params['title'] !== '' && $params['content'] !== ''){
             $page_id = $page_model->repository->newPage($params);
-            //echo $page_id;
         }
 
     }
@@ -38,5 +37,13 @@ class PageController extends  AdminController
         $params = $this->request->post;
         $page_model = $this->load->model('page');
         $page_model->repository->updatePage($params);
+    }
+
+    public function delete(){
+        $params = $this->request->post;
+        if (isset($params['id']) && !empty($params['id'])){
+            $page_model = $this->load->model('page');
+            echo $page_model->repository->deletePage($params);
+        }
     }
 }
