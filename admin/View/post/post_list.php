@@ -1,11 +1,12 @@
-<?php $this->theme->header() ?>
+<?php Theme::header(); ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Posts</h3>
+            <h2 class="page_header">Posts</h2>
 
-            <table>
-                <tr>
+            <table class="diff_table">
+                <tr class="headers">
                     <td>
                         id
                     </td>
@@ -19,7 +20,11 @@
                     </td>
 
                     <td>
+                        edit
+                    </td>
 
+                    <td>
+                        delete
                     </td>
                 </tr>
                 <?php foreach ($posts as $post) : ?>
@@ -38,22 +43,24 @@
                         </td>
 
                         <td>
-                            <a href="/admin/post/edit/<?= $post['id'] ?>">Edit</a>
+                            <a href="/admin/post/edit/<?= $post['id'] ?>">
+                                <i class="fa fa-pencil icon_edit" aria-hidden="true"></i>
+                            </a>
                         </td>
 
                         <td>
-                            <button onclick="post.delete(<?=$post['id'];?>);">Delete</button>
+                            <i onclick="post.delete(<?=$post['id'];?>);" class="fa fa-times icon_delete" aria-hidden="true"></i>
                         </td>
 
                     </tr>
                 <?php endforeach; ?>
             </table>
 
+            <a class="spec_link" href="/admin/post/create">New Post</a>
 
-            <a href="/admin/post/create">New Post</a>
 
         </div>
     </div>
 </div>
 
-<?php $this->theme->footer() ?>
+<?php Theme::footer(); ?>

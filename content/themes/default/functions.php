@@ -12,3 +12,5 @@ Assets::js('js/jquery.easing-1.3.js');
 Assets::js('js/bootstrap.js');
 Assets::js('js/plugins.js');
 Assets::js('js/main.js');
+
+?>

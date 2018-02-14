@@ -27,11 +27,13 @@ var post = {
     },
 
     update: function(){
-        form_data = new FormData();
+        var form_data = new FormData();
+        var file = $('#form_image').prop('files')[0];
 
         form_data.append('id',$('#form_id').val());
         form_data.append('title',$('#form_title').val());
         form_data.append('content',$('.form_content').val());
+        form_data.append('image', file);
 
         $.ajax({
 
@@ -41,6 +43,7 @@ var post = {
             cache: false,
             contentType: false,
             processData: false,
+            dataType: false,
             beforeSend: function(){
 
             },

@@ -1,14 +1,16 @@
-<?php $this->theme->header(); ?>
+<?php Theme::header(); ?>
 
 <div class="container">
     <div class="row">
         <div class="col page-title">
-            <h3>General</h3>
+            <div class="col-md-12">
+                <h2>General</h2>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <?php $this->theme->block('setting/tabs'); ?>
+            <?php Theme::block('setting/tabs'); ?>
         </div>
     </div>
     <div class="row">
@@ -19,8 +21,8 @@
                 <?php if ($setting['field_key'] == 'language') : ?>
 
                     <p>
-                        <?= $setting['name'] ?>
-                        <select name="<?= $setting['field_key'] ?>" >
+                    <div class="setting_name"><?=ucfirst($setting['name'])?></div>
+                        <select class="input_1" name="<?= $setting['field_key'] ?>" >
                             <?php foreach ($languages as $lang) : ?>
                                 <option value="<?=$lang['key']?>">
                                     <?=$lang['title']?>
@@ -33,8 +35,8 @@
                     <?php else : ?>
 
                     <p>
-                        <?= $setting['name'] ?>
-                        <input type="text" name="<?= $setting['field_key'] ?>" value="<?= $setting['value'] ?>">
+                        <div class="setting_name"><?=ucfirst($setting['name'])?></div>
+                        <input class="input_1" type="text" name="<?= $setting['field_key'] ?>" value="<?= $setting['value'] ?>">
                     </p>
 
                     <?php endif; ?>
@@ -42,7 +44,7 @@
             <?php endforeach; ?>
 
         </form>
-            <button onclick="setting.update()">Update</button>
+            <a onclick="setting.update()" class="spec_link" href="#">Update</a>
         </div>
 
 
@@ -52,4 +54,4 @@
 </div>
 
 
-<?php $this->theme->footer(); ?>
+<?php Theme::footer(); ?>

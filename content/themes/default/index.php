@@ -1,6 +1,4 @@
-<?php
-$this->theme->header();
-?>
+<?php Theme::header(); ?>
 
     <body>
     <!--[if lt IE 7]>
@@ -12,15 +10,18 @@ $this->theme->header();
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-6">
                         <div id="templatemo_logo">
-                            <h1><a href="#"><?=Setting::get('site_name')?></a></h1>
-                        </div> <!-- /.logo -->
-                    </div> <!-- /.col-md-4 -->
+                            <h1><a href="#"> <?=Setting::get('site_name');?> </a></h1>
+                        </div>
+                    </div>
                     <div class="col-md-8 col-sm-6 col-xs-6">
                         <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
                         <div class="main-menu">
+
                             <ul>
                                 <?php foreach(Menu::mainMenu() as $menu) :?>
-                                <li><a href="<?=$menu['href']?>"><?=$menu['name']?></a></li>
+                                    <li>
+                                        <a href="<?=$menu['href'];?>" class="qwe"> <?=$menu['name'];?> </a>
+                                    </li>
                                 <?php endforeach;?>
                             </ul>
                         </div> <!-- /.main-menu -->
@@ -32,10 +33,11 @@ $this->theme->header();
                             <div class="main-menu">
                                 <ul>
 
-                                    <li><a href="#front">Home</a></li>
-                                    <li><a href="#services">Services</a></li>
-                                    <li><a href="#products">Products</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <?php foreach(Menu::mainMenu() as $menu) :?>
+                                        <li>
+                                            <a href=" <?=$menu['href']?> " > <?=$menu['name']?> </a>
+                                        </li>
+                                    <?php endforeach;?>
 
                                 </ul>
                             </div>
@@ -156,6 +158,14 @@ $this->theme->header();
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /#services -->
+
+    <!-- posts -->
+    <?php
+    if ( !empty($post_list)){
+        Theme::block('post/post_list', ['list' => $post_list]);
+    }
+    ?>
+    <!-- end posts -->
 
     <div id="product-promotion" class="content-section">
         <div class="container">
@@ -392,4 +402,4 @@ $this->theme->header();
     </div> <!-- /.site-footer -->
 
 
-<?php $this->theme->footer(); ?>
+<?php Theme::footer(); ?>

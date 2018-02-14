@@ -1,18 +1,12 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs menu_tabs">
     <li class="nav-item">
-        <a class="nav-link active" href="/admin/settings">
+        <a class="nav-link active menu_link" href="/admin/settings">
             General
         </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            Appearance
+    <li class="nav-item">
+        <a class="dropdown-item menu_link" href="/admin/settings/menus">
+            Menus
         </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Themes</a>
-            <a class="dropdown-item" href="/admin/settings/menus">
-                Menus
-            </a>
-        </div>
     </li>
 </ul>

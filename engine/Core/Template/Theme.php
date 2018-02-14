@@ -46,7 +46,7 @@ class Theme
     /**
      * @param null $name
      */
-    public function header($name = null){
+    public static function header($name = null){
         $name = (string)$name;
         $file = self::DetectFileName($name, __FUNCTION__);
 
@@ -56,7 +56,7 @@ class Theme
     /**
      * @param null $name
      */
-    public function footer($name = null){
+    public static function footer($name = null){
         $name = (string)$name;
         $file = self::DetectFileName($name, __FUNCTION__);
 
@@ -66,7 +66,7 @@ class Theme
     /**
      * @param null $name
      */
-    public function sidebar($name = null){
+    public static function sidebar($name = null){
         $name = (string)$name;
         $file = self::DetectFileName($name, __FUNCTION__);
 
@@ -77,7 +77,7 @@ class Theme
      * @param null $name
      * @param array $data
      */
-    public function block($name = null, $data = []){
+    public static function block($name = null, $data = []){
         $name = (string)$name;
 
         if($name !== ''){

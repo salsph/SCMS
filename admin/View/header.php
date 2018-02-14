@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="SHORTCUT ICON" href="/admin/Assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/admin/Assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/admin/Assets/css/animate.css">
     <link rel="stylesheet" href="/admin/Assets/js/plugins/trumbowyg/ui/trumbowyg.min.css">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="/admin/Assets/css/login.css">
+    <link rel="stylesheet" href="/admin/Assets/css/admin.css">
     <title>Login</title>
 </head>
 <body>
@@ -20,7 +22,9 @@
 <header class="main_header">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 header_left">LOGO</div>
+            <div class="col-md-3 header_left">
+                <a href="/admin"><img src="/admin/Assets/img/scms_l.png" alt=""></a>
+            </div>
             <div class="col-md-9 header_right">
                 <nav>
                     <ul class="main_menu">

@@ -36,11 +36,11 @@
 
     $('.responsive .main-menu a').click(function(){
         $('.responsive .main-menu').hide();
-
+        return false;
     });
 
-    $('.main-menu').singlePageNav();
-	
+    //$('.main-menu').singlePageNav();
+
 //	var dt = window.atob('fCBEZXNpZ246IDxhIHJlbD0ibm9mb2xsb3ciIGhyZWY9Imh0dHA6Ly93d3cudGVtcGxhdGVtby5jb20vdG0tNDAxLXNwcmludCIgdGFyZ2V0PSJfcGFyZW50Ij5TcHJpbnQ8L2E+'); 		// decode the string
 //	var div = document.getElementById('copyright');
 
@@ -61,7 +61,6 @@ function initialize() {
 
 // load google map
 var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-        'callback=initialize';
-    document.body.appendChild(script);
+script.type = 'text/javascript';
+script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+document.body.appendChild(script);

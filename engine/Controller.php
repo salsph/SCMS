@@ -40,6 +40,12 @@ abstract class Controller
      */
     protected $load;
 
+    /**
+     * @var array
+     * arr for different data
+     */
+    protected $data = [];
+
 
     /**
      * Controller constructor.

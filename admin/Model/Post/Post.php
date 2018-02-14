@@ -6,11 +6,15 @@ use \Engine\Core\DB\ActiveRecord;
 
 class Post
 {
+    const IMAGE_DIR_MASK = ROOT_DIR . '/../content/uploads/post/%d';
+    const IMAGE_MIME = ['image/png', 'image/gif', 'image/jpeg'];
+
     protected $table = 'post';
     private $id;
     private $title;
     private $content;
     private $reg_date;
+    private $image;
 
     use ActiveRecord;
 
@@ -76,6 +80,22 @@ class Post
     public function setRegDate($reg_date)
     {
         $this->reg_date = $reg_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 
 }

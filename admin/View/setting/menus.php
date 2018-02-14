@@ -1,23 +1,25 @@
-<?php $this->theme->header(); ?>
+<?php Theme::header(); ?>
 <div class="container">
     <div class="row">
         <div class="col page-title">
-            <h3>Menus</h3>
+            <div class="col-md-12">
+                <h2>Menus</h2>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            <?php $this->theme->block('setting/tabs'); ?>
+            <?php Theme::block('setting/tabs'); ?>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <div class="col-4">
+            <div class="col-md-5">
                 <h4 class="heading-setting-section">
-                    List menu
-                    <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="#addMenu" data-whatever="@getbootstrap">
+                    <span class="fs_20">List menu</span>
+                    <a href="javascript:void(0)" class="spec_link_2" data-toggle="modal" data-target="#addMenu" data-whatever="@getbootstrap">
                         Add Menu
                     </a>
                 </h4>
@@ -35,14 +37,15 @@
                     </div>
                 <?php else: ?>
                     <div class="empty-items">
-                        <p>You do not have any menu created</p>
+                        <p><span class="fs_20">You do not have any menu created</span></p>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="col-8">
+            <div class="col-md-7">
                 <?php if ($menu_id !== null): ?>
                     <h4 class="heading-setting-section">
-                        Edit menu
+                       <span class="fs_20">Edit menu</span>
+                        <a href="#" class="spec_link_2" onclick="menu.addItem(<?php echo $menu_id ?>)">Add menu item</a>
                     </h4>
                     <br>
                     <input type="hidden" id="sortMenuId" value="<?php echo $menu_id ?>" />
@@ -51,9 +54,7 @@
                             Theme::block('setting/menu_item', $item);
                         } ?>
                     </ol>
-                    <button class="add-item-button" onclick="menu.addItem(<?php echo $menu_id ?>)">
-                        <i class="icon-plus icons"></i> Add menu item
-                    </button>
+
                 <?php endif; ?>
             </div>
 
@@ -91,4 +92,4 @@
     </div>
 </div>
 
-<?php $this->theme->footer(); ?>
+<?php Theme::footer(); ?>

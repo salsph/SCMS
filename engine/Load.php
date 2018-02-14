@@ -49,7 +49,6 @@ class Load
 
         $model->entity = $entity;
 
-
         $model->repository = new $repository($di);
 
         return $model;

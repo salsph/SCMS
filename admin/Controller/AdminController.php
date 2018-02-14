@@ -12,7 +12,7 @@ class AdminController extends  Controller
     /**
      * @var array
      */
-    protected $data = [];
+    //protected $data = [];
 
     /**
      * AdminController constructor.

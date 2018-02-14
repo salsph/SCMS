@@ -1,20 +1,20 @@
-<?php $this->theme->header() ?>
+<?php Theme::header(); ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Edit the post</h3>
-
-            <?php //print_r($post); die(); ?>
+            <h2 class="page_header">Edit the post</h2>
 
             <form>
                 <input type="hidden" name="id" id="form_id" value="<?= $post['id'] ?>">
-                <input type="text" placeholder="Title" name="title" id="form_title" value="<?=$post['title'] ?>">
-                <textarea name="content" class="form_content" id="redactor" ><?= $post['content'] ?></textarea>
+                <input class="input_1" type="text" placeholder="Title" name="title" id="form_title" value="<?=$post['title'] ?>">
+                <input type="file" id="form_image" name="image">
+                <textarea placeholder="Content" name="content" class="form_content textarea_1" id="redactor" ><?= $post['content'] ?></textarea>
             </form>
-            <button class="add_click" onclick="post.update();">Update</button>
+            <button class="add_click spec_link" onclick="post.update();">Update</button>
 
         </div>
     </div>
 </div>
 
-<?php $this->theme->footer() ?>
+<?php Theme::footer(); ?>

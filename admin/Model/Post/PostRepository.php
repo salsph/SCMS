@@ -27,6 +27,9 @@ class PostRepository extends Model
         $post = new Post($params['id']);
         $post->setTitle($params['title']);
         $post->setContent($params['content']);
+        if (isset($params['image'])){
+
+        }
         $post->save();
     }
 

@@ -333,9 +333,11 @@ h6 {
   display: block;
 }
 #templatemo_logo h1 a {
-  margin-left: 140px;
+  margin-left: 120px;
   color: white;
   display: block;
+  line-height: 50px;
+  text-align: center;
 }
 
 .main-menu {
@@ -362,7 +364,7 @@ h6 {
   border: 0;
   display: block;
 }
-.main-menu ul li a.current {
+.main-menu ul li a .current {
   background: url(../images/active-state.png) no-repeat;
   background-position: center 65px;
 }
@@ -702,6 +704,32 @@ ul.social li a {
   background-color: rgba(255, 255, 255, 0.2);
   display: inline-block;
 }
+
+.single_post {
+  margin-bottom: 40px;
+}
+
+.single_post .title {
+  background: #f8f8f8;
+  padding: 10px 5px;
+  margin: 0px 0px 20px 0px;
+  border-bottom: 1px dotted #a9a9a9;
+  border-top: 1px dotted #a9a9a9;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd;
+}
+
+.single_post .content {
+  background: #f8f8f8;
+  padding-bottom: 20px;
+  overflow: auto;
+}
+
+.single_post .content .text {
+  padding: 20px;
+  margin: 0;
+}
+
 
 /*------------------------------------------------------
 	RESPONSIVE STYLES 

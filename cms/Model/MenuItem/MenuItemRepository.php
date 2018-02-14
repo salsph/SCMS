@@ -26,7 +26,7 @@ class MenuItemRepository extends Model
         $menu_item = new MenuItem();
         $menu_item->setName(self::NEW_MENU_ITEM_NAME);
         $menu_item->setMenuId($params['menu_id']);
-        $menu_item->save();
+        return $menu_item->save();
     }
 
     public function removeItem($item_id){

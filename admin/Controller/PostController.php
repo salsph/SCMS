@@ -2,6 +2,8 @@
 
 namespace Admin\Controller;
 
+use \Admin\Model\Post\Post;
+use \Engine\Helper\Image;
 
 class PostController extends  AdminController
 {
@@ -44,7 +46,17 @@ class PostController extends  AdminController
 
     public function update(){
         $params = $this->request->post;
+        $files = $this->request->files;
+
         if (isset($params['id']) && !empty($params['id'])){
+            $directory = sprintf(POST::IMAGE_DIR_MASK, $params['id']);
+
+            if( !Image::loadPng($files['image'], $directory,$params['id'], POST::IMAGE_MIME) ){
+                //TODO add unsuccess load message
+            }
+
+            $params['image'] = $files['image'];
+            die();
             $post_model = $this->load->model('post');
             $post_model->repository->updatePost($params);
         }
